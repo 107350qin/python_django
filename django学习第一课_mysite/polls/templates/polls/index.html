@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+<div class="all">
+		<div class="header">
+			<img src="{% static 'polls/header.png' %}" alt="">	
+		</div>
+		<div class="hc">
+			<p>ARE YOU STATIFIED ABOUT YOUR LIFE TODAY ?</p>
+		</div>
+		<div class="center">
+				{% if a %}
+				<ul>
+					{% for i in a %}
+					<li>
+						<a href="{% url 'polls:detail' i.id %}">
+						<div class="xx">
+							{{ i.question_text }}
+						</div>
+						</a>
+					</li>
+					{% endfor %}
+				</ul>
+				{% else %}
+				<p>no polls are available.</p>
+				{% endif %}
+		</div>
+		<div class="xia">
+		<div class="xiaxia">
+			Author:Sir Qin &nbsp&nbsp&nbsp&nbsp Email:1654400317@qq.com
+		</div>
+		</div>
+</div>
+</body>
+</html>
